@@ -8,12 +8,12 @@
 
 ## Mixins list
 
-+ [triangle](#mixin_triangle)
-+ [grid](#mixin_grid)
-+ [for](#mixin_for)
-+ [placeholder](#mixin_placeholder)
-+ [pseudo](#mixin_pseudo)
-+ [bg](#mixin_bg)
++ [triangle](#triangle)
++ [grid](#grid)
++ [for](#for)
++ [placeholder](#placeholder)
++ [pseudo](#pseudo)
++ [bg](#bg)
 
 
 ## Usage
