@@ -14,7 +14,6 @@
 + [placeholder](#placeholder)
 + [pseudo](#pseudo)
 + [bg](#bg)
-+ [bg](#input)
 
 
 ## Usage
