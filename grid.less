@@ -1,0 +1,77 @@
+.grid(@gridClass; @cellClass; @columnsNum; @margin) {
+	.@{cellClass} {
+		.gridColWidth(@columnsNum; @margin);
+		margin-left: @margin;
+		margin-top: @margin;
+		box-sizing: border-box;
+		float: left;
+	}
+
+	.@{cellClass}:nth-child(@{columnsNum}n + 1) {
+		margin-left: 0;
+	}
+}
+
+.grid(@gridClass; @cellClass; @columnsNum; @margin; @param) {
+	// make basic grid
+	.grid(@gridClass; @cellClass; @columnsNum; @margin);
+
+	// make adaptive grid
+	& when (ispixel(extract(@param, 1))) { // @param is a state
+		.gridAdaptive(@param, @gridClass, @cellClass);
+	}
+
+	& when not (ispixel(extract(@param, 1))) { // @param is a list of states
+		.loop(@i: 1) when (@i =< length(@param)) {
+			.gridAdaptive(extract(@param, @i), @gridClass, @cellClass);
+
+			.loop(@i + 1);
+		}
+
+		.loop();
+	}
+}
+
+.gridAdaptive(@state, @gridClass, @cellClass) {
+	@screenWidth: extract(@state, 1);
+	@columnsNum: extract(@state, 2);
+	@margin: extract(@state, 3);
+
+	@media screen and (max-width: @screenWidth) {
+		.@{gridClass} .@{cellClass} {
+			.gridColWidth(@columnsNum; @margin);
+			margin-left: @margin;
+		}
+
+		& when not (@columnsNum = 1) {
+			.@{cellClass}:nth-child(@{columnsNum}n + 1) {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.gridColWidth(@columnsNum; @margin) {
+	& when (@columnsNum = 1) {
+		width: 100%;
+	}
+
+	& when not (@columnsNum = 1) {
+		@width: floor((100% / @columnsNum) * 100) / 100;
+		@widthDiff: floor((@margin * (@columnsNum - 1) / @columnsNum) * 100) / 100;
+		width: ~"calc(@{width} - @{widthDiff})";
+	}
+}
+
+// examples:
+
+//create simple grid:
+.grid(simpleGrid; simpleGrid__col; 4; 30px);
+
+//create adaptive grid:
+@adaptiveState1000px: 1000px, 3, 20px;
+@adaptiveState700px: 700px, 2, 10px;
+@adaptiveState400px: 700px, 1;
+
+.grid(adaptiveGrid; adaptiveGrid__col; 4; 30px; @adaptiveState1000px, @adaptiveState700px, @adaptiveState400px);
+

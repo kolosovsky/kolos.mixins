@@ -1,0 +1,37 @@
+.triangle(@direction; @width; @bg:#000; @height:round(((sqrt(3)/2) * @width))) {
+	@cornerBorder: @width / 2 solid transparent;
+
+	display: inline-block;
+
+	& when (@direction = top) {
+		border-left: @cornerBorder;
+		border-right: @cornerBorder;
+		border-bottom: @height solid @bg;
+	}
+
+	& when (@direction = bottom) {
+		border-left: @cornerBorder;
+		border-right: @cornerBorder;
+		border-top: @height solid @bg;
+	}
+
+	& when (@direction = left) {
+		border-top: @cornerBorder;
+		border-bottom: @cornerBorder;
+		border-right: @height solid @bg;
+	}
+
+	& when (@direction = right) {
+		border-top: @cornerBorder;
+		border-bottom: @cornerBorder;
+		border-left: @height solid @bg;
+	}
+}
+
+/* examples:
+
+.figure {
+	.triangle(top, 22px);
+}
+
+*/
