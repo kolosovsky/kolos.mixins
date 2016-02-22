@@ -1,0 +1,15 @@
+.bgDefault {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bg(@size:cover) {
+	background-size: @size;
+	&:extend(.bgDefault);
+}
+
+// usage:
+//
+//.selector {
+//	.bg();
+//}

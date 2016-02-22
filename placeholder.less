@@ -1,0 +1,23 @@
+.placeholderFocus {
+	&:focus::-webkit-input-placeholder { color: transparent; }
+	&:focus::-moz-placeholder { color: transparent; } // Firefox 19+
+	&:focus:-moz-placeholder { color: transparent; } // Firefox 18-
+	&:focus:-ms-input-placeholder { color: transparent; }
+}
+
+.placeholder(@color) {
+	// do not group this rules
+
+	&::-webkit-input-placeholder { color: @color; }
+	&::-moz-placeholder { color: @color; } // Firefox 19+
+	&:-moz-placeholder { color: @color; } // Firefox 18-
+	&:-ms-input-placeholder { color: @color; }
+
+	&:extend(.placeholderFocus all);
+}
+
+// usage:
+//
+//.input {
+//  .placeholder(red);
+//}
