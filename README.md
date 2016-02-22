@@ -21,9 +21,11 @@
 
 ### triangle
 
+```less
 .figure {
 	.triangle(top, 22px);
 }
+```
 
 
 ### grid
@@ -44,6 +46,7 @@
 
 ### for
 
+```less
 @colors: #1abc9c, #2ecc71, #3498db, #9b59b6;
 
 .for(@colors, {
@@ -51,18 +54,23 @@
 		color: @value;
 	}
 });
+```
 
 
 ### placeholder
 
+```less
 .input {
   .placeholder(red);
 }
+```
 
 
 ### pseudo
 
+```less
 .selector:after:extend(.pseudo) { }
+```
 
 
 ### bg
