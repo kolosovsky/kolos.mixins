@@ -1,13 +1,15 @@
 .for(@list, @code) {
-	.loop(@i:1) when (@i =< length(@list)) {
-		@value: extract(@list, @i);
+	& {
+		.loop(@i:1) when (@i =< length(@list)) {
+			@value: extract(@list, @i);
 
-		@code();
+			@code();
 
-		.loop(@i + 1);
+			.loop(@i + 1);
+		}
+
+		.loop();
 	}
-
-	.loop();
 }
 
 
