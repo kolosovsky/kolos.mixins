@@ -10,6 +10,10 @@
 	.@{cellClass}:nth-child(@{columnsNum}n + 1) {
 		margin-left: 0;
 	}
+
+	.@{cellClass}:nth-child(-n + @{columnsNum}) {
+		margin-top: 0;
+	}
 }
 
 .grid(@gridClass; @cellClass; @columnsNum; @margin; @param) {
@@ -41,6 +45,11 @@
 		.@{gridClass} .@{cellClass} {
 			.gridColWidth(@columnsNum; @margin);
 			margin-left: @margin;
+			margin-top: @margin;
+		}
+
+		.@{cellClass}:nth-child(-n + @{columnsNum}) {
+			margin-top: 0;
 		}
 
 		& when not (@columnsNum = 1) {
