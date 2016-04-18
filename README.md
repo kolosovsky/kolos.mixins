@@ -85,9 +85,7 @@
 ### square
 
 ```less
-.selector {
-	.square();
-}
+.selector:extend(.square) {}
 ```
 
 
