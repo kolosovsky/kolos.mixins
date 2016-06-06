@@ -14,6 +14,7 @@
 + [placeholder](#placeholder)
 + [pseudo](#pseudo)
 + [bg](#bg)
++ [square](#square)
 
 
 ## Usage
@@ -78,6 +79,13 @@
 .selector {
 	.bg();
 }
+```
+
+
+### square
+
+```less
+.selector:extend(.square all) {}
 ```
 
 
