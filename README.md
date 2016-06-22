@@ -15,6 +15,7 @@
 + [pseudo](#pseudo)
 + [bg](#bg)
 + [square](#square)
++ [ellipsis](#ellipsis)
 
 
 ## Usage
@@ -86,6 +87,13 @@
 
 ```less
 .selector:extend(.square all) {}
+```
+
+
+### ellipsis
+
+```less
+.selector:extend(.ellipsis) {}
 ```
 
 
