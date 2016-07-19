@@ -33,14 +33,14 @@
 
 ```less
 //create simple grid:
-.grid(simpleGrid; simpleGrid__col; 4; 30px);
+.grid(~'.gridSelector'; ~'.itemSelector'; 4; 30px);
 
 //create adaptive grid:
 @adaptiveState1000px: 1000px, 3, 20px;
 @adaptiveState700px: 700px, 2, 10px;
 @adaptiveState400px: 700px, 1;
 
-.grid(adaptiveGrid; adaptiveGrid__col; 4; 30px; @adaptiveState1000px, @adaptiveState700px, @adaptiveState400px);
+.grid(~'.gridSelector'; ~'.itemSelector'; 4; 30px; @adaptiveState1000px, @adaptiveState700px, @adaptiveState400px);
 ```
 
 

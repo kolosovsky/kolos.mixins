@@ -1,5 +1,5 @@
 .grid(@gridClass; @cellClass; @columnsNum; @margin) {
-	.@{cellClass} {
+	@{cellClass} {
 		.gridColWidth(@columnsNum; @margin);
 		margin-left: @margin;
 		margin-top: @margin;
@@ -7,11 +7,11 @@
 		float: left;
 	}
 
-	.@{cellClass}:nth-child(@{columnsNum}n + 1) {
+	@{cellClass}:nth-child(@{columnsNum}n + 1) {
 		margin-left: 0;
 	}
 
-	.@{cellClass}:nth-child(-n + @{columnsNum}) {
+	@{cellClass}:nth-child(-n + @{columnsNum}) {
 		margin-top: 0;
 	}
 }
@@ -42,18 +42,18 @@
 	@margin: extract(@state, 3);
 
 	@media screen and (max-width: @screenWidth) {
-		.@{gridClass} .@{cellClass} {
+		@{gridClass} @{cellClass} {
 			.gridColWidth(@columnsNum; @margin);
 			margin-left: @margin;
 			margin-top: @margin;
 		}
 
-		.@{cellClass}:nth-child(-n + @{columnsNum}) {
+		@{cellClass}:nth-child(-n + @{columnsNum}) {
 			margin-top: 0;
 		}
 
 		& when not (@columnsNum = 1) {
-			.@{cellClass}:nth-child(@{columnsNum}n + 1) {
+			@{gridClass} @{cellClass}:nth-child(@{columnsNum}n + 1) {
 				margin-left: 0;
 			}
 		}
