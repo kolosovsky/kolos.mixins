@@ -1,0 +1,31 @@
+.hexagon(@sideLength, @bg) {
+	@SmallDiagonalLength: @sideLength * sqrt(3);
+	@bg: #fff;
+
+
+	// find height of triangles
+	@TriangleP: (@sideLength + @sideLength + @SmallDiagonalLength) / 2; // triangle's semiperimeter
+	@TriangleS: sqrt(@TriangleP * (@TriangleP - @sideLength) * (@TriangleP - @sideLength) * (@TriangleP - @SmallDiagonalLength)); // triangle's area
+	@TriangleHeight: (@TriangleS * 2) / @SmallDiagonalLength; // triangle's height
+
+	height: @SmallDiagonalLength;
+	width: @sideLength;
+	background: @bg;
+	position: relative;
+
+	&:before:extend(.pseudo all),
+	&:after:extend(.pseudo all) {
+		top: 0;
+		bottom: 0; // without this rule browser makes incorrect roundings
+	}
+
+	&:before:extend(.pseudo all) {
+		.triangle(left, @SmallDiagonalLength, @bg, @TriangleHeight);
+		right: 100%;
+	}
+
+	&:after:extend(.pseudo all) {
+		.triangle(right, @SmallDiagonalLength, @bg, @TriangleHeight);
+		left: 100%;
+	}
+}

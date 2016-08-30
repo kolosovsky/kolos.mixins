@@ -1,0 +1,155 @@
+/* ===== DISPLAY ===== */
+
+.flexD(@display: flex) {
+	& when (@display = flex) {
+		&:extend(.dflex);
+	}
+
+	& when (@display = inline-flex) {
+		&:extend(.diflex);
+	}
+}
+
+.dflex {
+	display: flex;
+}
+
+.diflex {
+	display: inline-flex;
+}
+
+
+
+/* ===== ALIGN-ITEMS ===== */
+
+.flexAI(@align: center) {
+	& when (@align = center) {
+		&:extend(.flexAIC);
+	}
+
+	& when (@align = flex-start) {
+		&:extend(.flexAIS);
+	}
+
+	& when (@align = flex-end) {
+		&:extend(.flexAIE);
+	}
+
+	& when (@align = stretch) {
+		&:extend(.flexAIST);
+	}
+}
+
+.flexAIC {
+	align-items: center;
+}
+
+.flexAIS {
+	align-items: flex-start;
+}
+
+.flexAIE {
+	align-items: flex-end;
+}
+
+.flexAIST {
+	align-items: stretch;
+}
+
+
+
+/* ===== JUSTIFY-CONTENT ===== */
+
+.flexJC(@justify: center) {
+	& when (@justify = center) {
+		&:extend(.flexJCC);
+	}
+
+	& when (@justify = flex-start) {
+		&:extend(.flexJCS);
+	}
+
+	& when (@justify = flex-end) {
+		&:extend(.flexJCE);
+	}
+
+	& when (@justify = space-between) {
+		&:extend(.flexJCSB);
+	}
+}
+
+.flexJCC {
+	justify-content: center;
+}
+
+.flexJCS {
+	justify-content: flex-start;
+}
+
+.flexJCE {
+	justify-content: flex-end;
+}
+
+.flexJCSB {
+	justify-content: space-between;
+}
+
+
+
+/* ===== SHRINK ===== */
+
+.flexS(@shrink: 0) {
+	& when (@shrink = 0) {
+		&:extend(.flexS0);
+	}
+
+	& when (@shrink = 1) {
+		&:extend(.flexS1);
+	}
+}
+
+.flexS0 {
+	flex-shrink: 0;
+}
+
+.flexS1 {
+	flex-shrink: 1;
+}
+
+
+
+/* ===== DIRECTION ===== */
+
+.flexDIR(@direction: column) {
+	& when (@direction = column) {
+		&:extend(.flexDIRC);
+	}
+
+	& when (@direction = row) {
+		&:extend(.flexDIRR);
+	}
+}
+
+.flexDIRC {
+	flex-direction: column;
+}
+
+.flexDIRR {
+	flex-direction: row;
+}
+
+
+
+/* ===== WRAP ===== */
+
+.flexW(@wrap: wrap) {
+	& when (@wrap = wrap) {
+		&:extend(.flexWW);
+	}
+}
+
+.flexWW {
+	flex-wrap: wrap;
+}
+
+
