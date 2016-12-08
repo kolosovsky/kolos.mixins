@@ -1,7 +1,8 @@
+
+
 .hexagon(@sideLength, @bg) {
 	@SmallDiagonalLength: @sideLength * sqrt(3);
 	@bg: #fff;
-
 
 	// find height of triangles
 	@TriangleP: (@sideLength + @sideLength + @SmallDiagonalLength) / 2; // triangle's semiperimeter
@@ -13,18 +14,18 @@
 	background: @bg;
 	position: relative;
 
-	&:before:extend(.pseudo all),
-	&:after:extend(.pseudo all) {
+	&:before:extend(.pseudo),
+	&:after:extend(.pseudo) {
 		top: 0;
 		bottom: 0; // without this rule browser makes incorrect roundings
 	}
 
-	&:before:extend(.pseudo all) {
+	&:before:extend(.pseudo) {
 		.triangle(left, @SmallDiagonalLength, @bg, @TriangleHeight);
 		right: 100%;
 	}
 
-	&:after:extend(.pseudo all) {
+	&:after:extend(.pseudo) {
 		.triangle(right, @SmallDiagonalLength, @bg, @TriangleHeight);
 		left: 100%;
 	}

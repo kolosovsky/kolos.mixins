@@ -118,6 +118,28 @@
 
 
 
+/* ===== SHRINK ===== */
+
+.flexG(@grow: 0) {
+	& when (@grow = 0) {
+		&:extend(.flexG0);
+	}
+
+	& when (@grow = 1) {
+		&:extend(.flexG1);
+	}
+}
+
+.flexG0 {
+	flex-grow: 0;
+}
+
+.flexG1 {
+	flex-grow: 1;
+}
+
+
+
 /* ===== DIRECTION ===== */
 
 .flexDIR(@direction: column) {
@@ -136,6 +158,35 @@
 
 .flexDIRR {
 	flex-direction: row;
+}
+
+
+/* ===== ALIGN-SELF ===== */
+
+.flexAS(@value: center) {
+	& when (@value = center) {
+		&:extend(.flexASC);
+	}
+
+	& when (@value = flex-start) {
+		&:extend(.flexASFS);
+	}
+
+	& when (@value = flex-end) {
+		&:extend(.flexASFE);
+	}
+}
+
+.flexASC {
+	align-self: center;
+}
+
+.flexASFS {
+	align-self: flex-start;
+}
+
+.flexASFE {
+	align-self: flex-end;
 }
 
 
