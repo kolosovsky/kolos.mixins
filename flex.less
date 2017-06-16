@@ -2,19 +2,19 @@
 
 .flexD(@display: flex) {
 	& when (@display = flex) {
-		&:extend(.dflex);
+		&:extend(.flex);
 	}
 
 	& when (@display = inline-flex) {
-		&:extend(.diflex);
+		&:extend(.iflex);
 	}
 }
 
-.dflex {
+.flex {
 	display: flex;
 }
 
-.diflex {
+.iflex {
 	display: inline-flex;
 }
 
