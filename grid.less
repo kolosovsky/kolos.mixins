@@ -27,7 +27,15 @@
 
 	& when not (ispixel(extract(@param, 1))) { // @param is a list of states
 		.loop(@i: 1) when (@i =< length(@param)) {
-			.gridAdaptive(extract(@param, @i), @gridClass, @cellClass);
+			// last state
+			& when (@i =< (length(@param) - 1)) {
+				.gridAdaptive(extract(@param, @i), @gridClass, @cellClass, extract(extract(@param, @i + 1), 1));
+			}
+
+			// not last state
+			& when not (@i =< (length(@param) - 1)) {
+				.gridAdaptive(extract(@param, @i), @gridClass, @cellClass);
+			}
 
 			.loop(@i + 1);
 		}
@@ -36,12 +44,12 @@
 	}
 }
 
-.gridAdaptive(@state, @gridClass, @cellClass) {
-	@screenWidth: extract(@state, 1);
+.gridAdaptive(@state, @gridClass, @cellClass, @minScreenWidth: 0px) {
+	@maxScreenWidth: extract(@state, 1);
 	@columnsNum: extract(@state, 2);
 	@margin: extract(@state, 3);
 
-	@media screen and (max-width: @screenWidth) {
+	@media screen and (max-width: @maxScreenWidth) and (min-width: @minScreenWidth) {
 		@{gridClass} @{cellClass} {
 			.gridColWidth(@columnsNum; @margin);
 			margin-left: @margin;
