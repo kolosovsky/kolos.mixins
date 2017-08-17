@@ -28,13 +28,13 @@
 	& when not (ispixel(extract(@param, 1))) { // @param is a list of states
 		.loop(@i: 1) when (@i =< length(@param)) {
 			// last state
-			& when (@i =< (length(@param) - 1)) {
-				.gridAdaptive(extract(@param, @i), @gridClass, @cellClass, extract(extract(@param, @i + 1), 1));
+			& when not (@i =< (length(@param) - 1)) {
+				.gridAdaptive(extract(@param, @i), @gridClass, @cellClass, 0px);
 			}
 
 			// not last state
-			& when not (@i =< (length(@param) - 1)) {
-				.gridAdaptive(extract(@param, @i), @gridClass, @cellClass);
+			& when (@i =< (length(@param) - 1)) {
+				.gridAdaptive(extract(@param, @i), @gridClass, @cellClass, extract(extract(@param, @i + 1), 1));
 			}
 
 			.loop(@i + 1);
@@ -44,16 +44,24 @@
 	}
 }
 
-.gridAdaptive(@state, @gridClass, @cellClass, @minScreenWidth: 0px) {
+.gridAdaptive(@state, @gridClass, @cellClass, @nextStateScreenWidth) {
 	@maxScreenWidth: extract(@state, 1);
 	@columnsNum: extract(@state, 2);
 	@margin: extract(@state, 3);
 
-	@media screen and (max-width: @maxScreenWidth) and (min-width: @minScreenWidth) {
+	@media screen and (max-width: @maxScreenWidth) and (min-width: @nextStateScreenWidth) {
 		@{gridClass} @{cellClass} {
 			.gridColWidth(@columnsNum; @margin);
-			margin-left: @margin;
+
 			margin-top: @margin;
+
+			& when not (@columnsNum = 1) {
+				margin-left: @margin;
+			}
+
+			& when (@columnsNum = 1) {
+				margin-left: 0;
+			}
 		}
 
 		@{cellClass}:nth-child(-n + @{columnsNum}) {
