@@ -1,43 +1,9 @@
-/* ===== DISPLAY ===== */
-
-.flexD(@display: flex) {
-	& when (@display = flex) {
-		&:extend(.flex);
-	}
-
-	& when (@display = inline-flex) {
-		&:extend(.iflex);
-	}
-}
-
 .flex {
 	display: flex;
 }
 
 .iflex {
 	display: inline-flex;
-}
-
-
-
-/* ===== ALIGN-ITEMS ===== */
-
-.flexAI(@align: center) {
-	& when (@align = center) {
-		&:extend(.flexAIC);
-	}
-
-	& when (@align = flex-start) {
-		&:extend(.flexAIS);
-	}
-
-	& when (@align = flex-end) {
-		&:extend(.flexAIE);
-	}
-
-	& when (@align = stretch) {
-		&:extend(.flexAIST);
-	}
 }
 
 .flexAIC {
@@ -56,28 +22,6 @@
 	align-items: stretch;
 }
 
-
-
-/* ===== JUSTIFY-CONTENT ===== */
-
-.flexJC(@justify: center) {
-	& when (@justify = center) {
-		&:extend(.flexJCC);
-	}
-
-	& when (@justify = flex-start) {
-		&:extend(.flexJCS);
-	}
-
-	& when (@justify = flex-end) {
-		&:extend(.flexJCE);
-	}
-
-	& when (@justify = space-between) {
-		&:extend(.flexJCSB);
-	}
-}
-
 .flexJCC {
 	justify-content: center;
 }
@@ -94,40 +38,12 @@
 	justify-content: space-between;
 }
 
-
-
-/* ===== SHRINK ===== */
-
-.flexS(@shrink: 0) {
-	& when (@shrink = 0) {
-		&:extend(.flexS0);
-	}
-
-	& when (@shrink = 1) {
-		&:extend(.flexS1);
-	}
-}
-
 .flexS0 {
 	flex-shrink: 0;
 }
 
 .flexS1 {
 	flex-shrink: 1;
-}
-
-
-
-/* ===== GROW ===== */
-
-.flexG(@grow: 0) {
-	& when (@grow = 0) {
-		&:extend(.flexG0);
-	}
-
-	& when (@grow = 1) {
-		&:extend(.flexG1);
-	}
 }
 
 .flexG0 {
@@ -138,43 +54,12 @@
 	flex-grow: 1;
 }
 
-
-
-/* ===== DIRECTION ===== */
-
-.flexDIR(@direction: column) {
-	& when (@direction = column) {
-		&:extend(.flexDIRC);
-	}
-
-	& when (@direction = row) {
-		&:extend(.flexDIRR);
-	}
-}
-
 .flexDIRC {
 	flex-direction: column;
 }
 
 .flexDIRR {
 	flex-direction: row;
-}
-
-
-/* ===== ALIGN-SELF ===== */
-
-.flexAS(@value: center) {
-	& when (@value = center) {
-		&:extend(.flexASC);
-	}
-
-	& when (@value = flex-start) {
-		&:extend(.flexASFS);
-	}
-
-	& when (@value = flex-end) {
-		&:extend(.flexASFE);
-	}
 }
 
 .flexASC {
@@ -189,21 +74,9 @@
 	align-self: flex-end;
 }
 
-
-
-/* ===== WRAP ===== */
-
-.flexW(@wrap: wrap) {
-	& when (@wrap = wrap) {
-		&:extend(.flexWW);
-	}
-}
-
 .flexWW {
 	flex-wrap: wrap;
 }
-
-/* ===== ORDER ===== */
 
 .flexOrder1 {
 	order: 1;
