@@ -1,0 +1,24 @@
+
+
+.m-burger(@width, @height, @lineHeight, @lineBG) {
+	width: @width;
+	height: @height;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	background: linear-gradient(
+			to bottom,
+			@lineBG 0,
+			@lineBG @lineHeight,
+			transparent @lineHeight,
+			transparent (@height / 2) - (@lineHeight / 2),
+			@lineBG (@height / 2) - (@lineHeight / 2),
+			@lineBG (@height / 2) + (@lineHeight / 2),
+			transparent (@height / 2) + (@lineHeight / 2),
+			transparent @height - @lineHeight,
+			@lineBG @height - @lineHeight,
+			@lineBG 100%
+	);
+}
