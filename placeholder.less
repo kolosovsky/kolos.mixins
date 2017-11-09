@@ -1,9 +1,9 @@
-.placeholderFocus {
-	&:focus::-webkit-input-placeholder { color: transparent; }
-	&:focus::-moz-placeholder { color: transparent; } // Firefox 19+
-	&:focus:-moz-placeholder { color: transparent; } // Firefox 18-
-	&:focus:-ms-input-placeholder { color: transparent; }
-}
+//.placeholderFocus {
+//	&:focus::-webkit-input-placeholder { color: transparent; }
+//	&:focus::-moz-placeholder { color: transparent; } // Firefox 19+
+//	&:focus:-moz-placeholder { color: transparent; } // Firefox 18-
+//	&:focus:-ms-input-placeholder { color: transparent; }
+//}
 
 .placeholder(@color) {
 	// do not group this rules
@@ -13,6 +13,6 @@
 	&:-moz-placeholder { color: @color; } // Firefox 18-
 	&:-ms-input-placeholder { color: @color; }
 
-	&:extend(.placeholderFocus all);
+	//&:extend(.placeholderFocus all);
 }
 
