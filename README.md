@@ -16,6 +16,7 @@
 + [bg](#bg)
 + [square](#square)
 + [ellipsis](#ellipsis)
++ [burger](#burger)
 
 
 ## Usage
@@ -94,6 +95,15 @@
 
 ```less
 .selector:extend(.ellipsis) {}
+```
+
+
+### burger
+
+```less
+.selector {
+	.m-burger(21px, 13px, 1px, #000);
+}
 ```
 
 
