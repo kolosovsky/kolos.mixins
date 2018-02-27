@@ -1,7 +1,7 @@
 {
   "name": "kolos.mixins",
   "version": "1.0.0",
-  "description": "",
+  "description": "Useful LESS mixins",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,10 @@
     "css",
     "mixins"
   ],
-  "author": "Ed Kolosovskiy <edd.kolosovskiy@gmail.com>",
+  "author": {
+    "name": "Ed Kolosovskiy",
+    "email": "edd.kolosovskiy@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kolosovskiy/kolos.mixins/issues"
