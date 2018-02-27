@@ -1,9 +1,9 @@
 # kolos.mixins
 
 
-## Import
+## Install
 
-@import (reference) "mixins";
+npm install kolos.mixins --save;
 
 
 ## Mixins list
