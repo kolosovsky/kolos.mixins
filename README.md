@@ -1,9 +1,10 @@
 # kolos.mixins
 
 
-## Install
-
+## Installation
+```bash
 npm install kolos.mixins --save;
+```
 
 
 ## Mixins list
