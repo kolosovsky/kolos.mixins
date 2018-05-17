@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kolosovskiy/kolos.mixins.git"
+    "url": "git+https://github.com/kolosovsky/kolos.mixins.git"
   },
   "keywords": [
     "less",
@@ -16,12 +16,12 @@
     "mixins"
   ],
   "author": {
-    "name": "Ed Kolosovskiy",
-    "email": "edd.kolosovskiy@gmail.com"
+    "name": "Ed Kolosovsky",
+    "email": "edd.kolosovsky@gmail.com"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kolosovskiy/kolos.mixins/issues"
+    "url": "https://github.com/kolosovsky/kolos.mixins/issues"
   },
-  "homepage": "https://github.com/kolosovskiy/kolos.mixins#readme"
+  "homepage": "https://github.com/kolosovsky/kolos.mixins#readme"
 }
