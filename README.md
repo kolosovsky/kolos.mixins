@@ -31,8 +31,7 @@ npm install kolos.mixins --save;
 ```
 
 
-### grid (deprecated in favour of CSS Grid Layout)
-
+### grid
 ```less
 //create simple grid:
 .grid(~'.gridSelector'; ~'.itemSelector'; 4; 30px);
