@@ -10,7 +10,7 @@ npm install kolos.mixins --save;
 ## Mixins list
 
 + [triangle](#triangle)
-+ [grid](#grid)
++ [grid (deprecated in favour of CSS Grid Layout)](#grid)
 + [for](#for)
 + [placeholder](#placeholder)
 + [pseudo](#pseudo)
@@ -31,7 +31,7 @@ npm install kolos.mixins --save;
 ```
 
 
-### grid
+### grid (deprecated in favour of CSS Grid Layout)
 
 ```less
 //create simple grid:
