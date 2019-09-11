@@ -6,10 +6,10 @@
 //}
 
 .placeholder(@color) {
-	// do not group this rules
+	// WARNING: do not group this rules
 	&::-webkit-input-placeholder { color: @color; }
 	&::-moz-placeholder { color: @color; } // Firefox 19+
-	&:-moz-placeholder { color: @color; } // Firefox 18-
+	// &:-moz-placeholder { color: @color; } // Firefox 18-
 	&:-ms-input-placeholder { color: @color; }
 
 	//&:extend(.placeholderFocus all);
